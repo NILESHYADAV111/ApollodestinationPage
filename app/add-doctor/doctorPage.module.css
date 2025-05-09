@@ -1,7 +1,87 @@
-.doctor_admin_page_main{
-    /* height: 200px;
+
+
+.doctor_admin_page_main {
+    display: flex;
+    min-height: 100vh;
+   
+    
+  }
+  
+  .left_sidebar {
     width: 200px;
-    background-color: red; */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .left_sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .left_sidebar li {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    
+  }
+  
+  .doctor_information_part {
+    /* flex: 1; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+    margin: auto;
+  }
+  
+  .input_group {
     display: flex;
     flex-direction: column;
-}
+  }
+  
+  .input_group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .input_group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .input_group select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    /* font-family: "Poppins", sans-serif; */
+    font-weight: 540;
+    color: #333;
+    
+
+  }
+
+  .input_group select option{
+
+
+  }
+
+ 
+
+  @media (max-width: 480px) {
+    .doctor_information_part{
+      display: flex;
+      flex-direction: column;
+    }
+    
+  }

@@ -1,168 +1,263 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+.destination_page_main{
+  height: 100vh;
+  
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.search_header{
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.search_header input{
+  padding: 0.7rem;
+  width: 40%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #88B6C4;
+  font-size: 1rem;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
+.doctor_list{
   display: flex;
-  gap: 24px;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #999896;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
 
-.footer a {
+/* .doctor_list .doctor_image img{
+  height: 5rem;
+} */
+
+.doctor_detail{
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.doctor_detail > p:nth-child(1){
+  color: black;
+  font-weight: 900;
+  font-size: 1.3rem;
+  
+}
+
+.doctor_detail > p:nth-child(2){
+  color: #999896;
+  font-size: 0.98rem;
+}
+
+.doctor_detail > p:nth-child(4),
+.doctor_detail> p:nth-child(5){
+  font-size: 0.8rem;
+  color: #999896;
+}
+
+.doctor_detail  .degree_experience{
   display: flex;
+  gap: 1rem;
+}
+
+.degree_experience p{
+  color: #6B45C6;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.degree_experience > p:nth-child(2)  .dot{
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.doctor_fees{
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  
+  margin-left:9rem ;
+}
+
+.doctor_fees button{
+  padding:0.9rem 0rem;
+  font-size: 0.8rem;
+  width: 9rem;
+  border-radius:10px ;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.doctor_fees p{
+  font-weight: 800;
+}
+
+.doctor_fees .doctorvisit{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   align-items: center;
+}
+
+ .doctorvisit button{
+  color: #106C89;
+  border: 1px solid #106C89;
+  background-color: white;
+}
+
+.doctor_fees .doctor_online{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+}
+
+ .doctor_online button{
+  color: white;
+  background-color: #106d89dc;
+  border: 1px solid transparent;
+  
+}
+
+
+.pagination {
+  display: flex;
   gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.footer img {
-  flex-shrink: 0;
+.page_link {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.page_link:hover {
+  background-color: #eee;
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+.active {
+  background-color: #0070f3;
+  color: white;
+  border-color: #0070f3;
+}
+
+
+.nodoctorfound{
+  font-size: 2rem;
+  color: red;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+
+/* Responsive Styling for Mobile and Tablet */
+/* @media (max-width: 768px) {
+  .search_header input {
+    width: 80%;
   }
 
-  .main {
-    align-items: center;
+  .doctor_list {
+    width: 90%;
+    flex-direction: column;
+    padding: 1.5rem;
   }
 
-  .main ol {
-    text-align: center;
+  .doctor_list .doctor_image img {
+    height: 4rem;
   }
 
-  .ctas {
+  .doctor_fees {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .doctor_fees .doctorvisit,
+  .doctor_fees .doctor_online {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .pagination {
     flex-direction: column;
   }
+} */
 
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+@media (max-width: 480px) {
+  .search_header {
+    height: 5rem;
   }
 
-  a.secondary {
-    min-width: auto;
+  .search_header input {
+    width: 90%;
   }
 
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .doctor_list {
+    width: 90%;
+    height: 30%;
+    margin-top: 1rem;
+    padding: 2rem;
+
+    
+    
   }
+
+ 
+
+  .doctor_detail > p:nth-child(1) {
+    font-size: 1.2rem;
+  }
+
+  .doctor_detail > p:nth-child(2) {
+    font-size: 0.9rem;
+  }
+
+  .doctor_fees{
+    position: relative;
+    top: 6rem;
+    left: -24.9rem;
+    height: 60%;
+    width: 70%;
+    gap: 4rem;
+  
+    
+  }
+
+  .doctor_fees button {
+    width: 7rem;
+     gap: 1rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pagination {
+    gap: 4px;
+    
+  }
+
+  .page_link {
+    padding: 6px 10px;
+  }
+
+
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+
+.addDoctor{
+  padding: 0.6rem;
+  margin: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+ 
+  justify-self: center;
 }
