@@ -3,16 +3,11 @@ import styles from './page.module.css';
 import { GoDotFill } from "react-icons/go";
 import Link from 'next/link';
 import Image from 'next/image';
-import { url } from 'next/server';
 
 const page = async ( { searchParams} ) => {
   
 
-  // const search =  await searchParams.search || '';
-  // const pageNum =  parseInt( await searchParams.page) || 1;
-  // const limit =  parseInt( await searchParams.limit) || 10;
-
-   const search = searchParams?.search || '';
+  const search = searchParams?.search || '';
   const pageNum = parseInt(searchParams?.page || '1');
   const limit = parseInt(searchParams?.limit || '10')
 
